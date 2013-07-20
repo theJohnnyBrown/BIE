@@ -13,6 +13,13 @@
   <!-- <img src="/picture.png"> -->
   <h1>Processing.js Test</h1>
   <p>This is my first Processing.js web-based sketch:</p>
-  <canvas data-processing-sources="hello-web.pde"></canvas>
+  <canvas id="user_image_1" data-processing-sources="hello-web.pde"></canvas>
+  <script type="text/javascript">
+    function reflect_x() {
+      pi = Processing.getInstanceById('user_image_1');
+      pi.translate(pi.width, 0);
+      pi.scale(-1, 1)
+    }
+  </script>
 </body>
 </html>

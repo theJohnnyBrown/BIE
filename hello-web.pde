@@ -9,9 +9,9 @@ float s = 0.0;
 void pif_open_image(pi_name) {
     pi_img = loadImage(pi_name);
     pi_w = pi_img.width;pi_h = pi_img.width;
-    size(2*pi_w, 2 * pi_h);
+    size(pi_w, pi_h);
     // println("w: " + pi_w + " h: " + pi_h);
-    image(pi_img, 0, 0, pi_w, pi_h);
+    // image(pi_img, 0, 0, pi_w, pi_h);
 
 }
 
@@ -26,8 +26,8 @@ void draw() {
     a = a + 0.04;
     s = cos(a);
  
-    translate(width/2, height/2);
-    scale(s); 
+    // translate(width/2, height/2);
+    // scale(s); 
     image(pi_img, 0,0);  
 }
 
