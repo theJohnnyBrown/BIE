@@ -5,7 +5,7 @@
       BIE is licensed under the MIT License, see LICENSE.
       For a list of copyright holders, please refer to AUTHORS.
     -->
-  <title>Hello Web - Processing.js Test</title>
+  <title>Browser Image Editor (alpha)</title>
 
   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
@@ -16,26 +16,33 @@
   <script src="BIE.js"></script>
 </head>
 <body>
-  <!-- <img src="/picture.png"> -->
-  <h1>Processing.js Test</h1>
-  <p>This is my first Processing.js web-based sketch:</p>
-  <p>
-    <span id="flip-horizontal" class="btn" title="flip horizontally">
-      <i class="icon-resize-horizontal" ></i>
-    </span>
-    <span id="flip-vertical" class="btn" title="flip vertically">
-      <i class="icon-resize-vertical"></i>
-    </span>
-    <span id="rotate-right" class="btn" title="rotate right">
-      <i class="icon-rotate-right"></i>
-    </span>
-    <span id="rotate-left" class="btn" title="rotate left">
-      <i class="icon-rotate-left"></i>
-    </span>
-  </p>
-  
-  <canvas id="user_image_1" data-processing-sources="hello-web.pde"></canvas>
-
+  <div class="container">
+    <div class="row">
+      <div class="span12 text-center">
+        <!-- <img src="/picture.png"> -->
+        <h1>Browser Image Editor (alpha)</h1>
+        <p>
+          This is a basic example of what can be done using modern browser technologies and no external plugins. The only dependencies are publicly abailable javascript libraries.
+        </p>
+        <p>
+          <span id="flip-horizontal" class="btn" title="flip horizontally">
+            <i class="icon-resize-horizontal" ></i>
+          </span>
+          <span id="flip-vertical" class="btn" title="flip vertically">
+            <i class="icon-resize-vertical"></i>
+          </span>
+          <span id="rotate-right" class="btn" title="rotate right">
+            <i class="icon-rotate-right"></i>
+          </span>
+          <span id="rotate-left" class="btn" title="rotate left">
+            <i class="icon-rotate-left"></i>
+          </span>
+        </p>
+        
+        <canvas id="user_image_1" data-processing-sources="hello-web.pde"></canvas>
+      </div>
+    </div>
+  </div>
   <script type="text/javascript">
     $(".btn").tooltip()
 
