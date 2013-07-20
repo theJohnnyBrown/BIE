@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <!--
       BIE is licensed under the MIT License, see LICENSE.
       For a list of copyright holders, please refer to AUTHORS.
@@ -22,7 +23,7 @@
         <!-- <img src="/picture.png"> -->
         <h1>Browser Image Editor (alpha)</h1>
         <p>
-          This is a basic example of what can be done using modern browser technologies and no external plugins. The only dependencies are publicly available javascript libraries.
+          This is a basic example of what can be done using modern browser technologies and no external plugins. The only dependencies are publicly available javascript libraries. Try the upload button to use a different image.
         </p>
         <p>
           <span id="flip-horizontal" class="btn" title="flip horizontally">
@@ -37,8 +38,28 @@
           <span id="rotate-left" class="btn" title="rotate left">
             <i class="icon-rotate-left"></i>
           </span>
+
+          <button type="button" id="upload-button" class="btn" data-toggle="modal" data-target="#upload-box" title="upload image">
+            <i class="icon-upload"></i>
+          </button>
         </p>
-        
+
+
+        <div id="upload-box" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Load from URL</h3>
+          </div>
+          <div class="modal-body">
+            <p>Enter the URL of an image file:</p>
+            <input type="text" id="load-image" name="load-image"/>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary">Load image</button>
+          </div>
+        </div>
+
+
         <canvas id="user_image_1" data-processing-sources="hello-web.pde"></canvas>
       </div>
     </div>
@@ -50,6 +71,12 @@
     $("#flip-vertical").click(reflect_y);
     $("#rotate-right").click(rotate_right);
     $("#rotate-left").click(rotate_left);
+
+    $("#upload-box .btn-primary").click(function(){
+      load_image($("#load-image").val(), function(){
+        $("#upload-box").modal('toggle');
+      })
+    });
   </script>
 </body>
 </html>

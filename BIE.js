@@ -31,6 +31,14 @@ function rotate_left() {
     pi.rotate(-Math.PI/2);
     pi.translate(-pi.width/2, -pi.height/2);
 }
+
+function load_image(url, callback){
+    pi = Processing.getInstanceById('user_image_1');
+    new_image = pi.requestImage(url, "", function(){
+        if (callback) callback();
+        pi.pif_open_image(new_image);
+    });
+}
 // the above functions could be placed by `reflect(rads)`, where `rads` is
 // radians from the center of the image and defines the axis to reflect
 // around. e.g. reflect(pi/2) has the same effect as reflect_x(), and
