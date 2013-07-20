@@ -16,6 +16,14 @@ function reflect_y() {
     pi.translate(0, pi.height);
     pi.scale(1, -1);
 }
+
+function rotate_right() {
+    // these repeated lookups should be references to `this`
+    pi = Processing.getInstanceById('user_image_1');
+    pi.translate(pi.width/2, pi.height/2);
+    pi.rotate(Math.PI/2);
+    pi.translate(-pi.width/2, -pi.height/2);
+}
 // the above functions could be placed by `reflect(rads)`, where `rads` is
 // radians from the center of the image and defines the axis to reflect
 // around. e.g. reflect(pi/2) has the same effect as reflect_x(), and

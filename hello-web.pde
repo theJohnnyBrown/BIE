@@ -9,7 +9,8 @@ float s = 0.0;
 void pif_open_image(pi_name) {
     pi_img = loadImage(pi_name);
     pi_w = pi_img.width;pi_h = pi_img.width;
-    size(pi_w, pi_h);
+    pf_dim = max(pi_w, pi_h);
+    size(pf_dim, pf_dim);
 }
 
 

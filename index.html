@@ -6,6 +6,12 @@
       For a list of copyright holders, please refer to AUTHORS.
     -->
   <title>Hello Web - Processing.js Test</title>
+
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+  <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
   <script src="processing-1.4.1.js"></script>
   <script src="BIE.js"></script>
 </head>
@@ -13,22 +19,26 @@
   <!-- <img src="/picture.png"> -->
   <h1>Processing.js Test</h1>
   <p>This is my first Processing.js web-based sketch:</p>
+  <p>
+    <span id="flip-horizontal" class="btn" title="flip horizontally">
+      <i class="icon-resize-horizontal" id="flip-horizontal"></i>
+    </span>
+    <span id="flip-vertical" class="btn" title="flip vertically">
+      <i class="icon-resize-vertical" id="flip-vertical"></i>
+    </span>
+    <span id="rotate-right" class="btn" title="rotate right">
+      <i class="icon-rotate-right" id="flip-right"></i>
+    </span>
+  </p>
+  
   <canvas id="user_image_1" data-processing-sources="hello-web.pde"></canvas>
+
   <script type="text/javascript">
-    function reflect_x() {
-      pi = Processing.getInstanceById('user_image_1');
-      pi.translate(pi.width, 0);
-      pi.scale(-1, 1)
-    }
-    function reflect_y() {
-      pi = Processing.getInstanceById('user_image_1');
-      pi.translate(0, pi.height);
-      pi.scale(1, -1);
-    }
-    // the above functions could be placed by `reflect(rads)`, where `rads` is
-    // radians from the center of the image and defines the axis to reflect
-    // around. e.g. reflect(pi/2) has the same effect as reflect_x(), and
-    // reflect(0) is equivalent to reflect_y() above.
+    $(".btn").tooltip()
+
+    $("#flip-horizontal").click(reflect_x);
+    $("#flip-vertical").click(reflect_y);
+    $("#rotate-right").click(rotate_right);
   </script>
 </body>
 </html>
