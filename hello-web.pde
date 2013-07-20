@@ -1,7 +1,7 @@
 /* BIE is licensed under the MIT License, see LICENSE.
     For a list of copyright holders, please refer to AUTHORS.*/
 
-/* @pjs preload="picture.png"; */
+/* @pjs preload="picture.jpg"; */
 PImage pi_img;
 float a = 0.0;
 float s = 0.0;
@@ -15,7 +15,7 @@ void pif_open_image(pi_name) {
 
 
 void setup() {
-    pif_open_image("picture.png");
+    pif_open_image("picture.jpg");
 }
 
 void draw() {

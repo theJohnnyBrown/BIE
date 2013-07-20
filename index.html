@@ -21,13 +21,16 @@
   <p>This is my first Processing.js web-based sketch:</p>
   <p>
     <span id="flip-horizontal" class="btn" title="flip horizontally">
-      <i class="icon-resize-horizontal" id="flip-horizontal"></i>
+      <i class="icon-resize-horizontal" ></i>
     </span>
     <span id="flip-vertical" class="btn" title="flip vertically">
-      <i class="icon-resize-vertical" id="flip-vertical"></i>
+      <i class="icon-resize-vertical"></i>
     </span>
     <span id="rotate-right" class="btn" title="rotate right">
-      <i class="icon-rotate-right" id="flip-right"></i>
+      <i class="icon-rotate-right"></i>
+    </span>
+    <span id="rotate-left" class="btn" title="rotate left">
+      <i class="icon-rotate-left"></i>
     </span>
   </p>
   
@@ -39,6 +42,7 @@
     $("#flip-horizontal").click(reflect_x);
     $("#flip-vertical").click(reflect_y);
     $("#rotate-right").click(rotate_right);
+    $("#rotate-left").click(rotate_left);
   </script>
 </body>
 </html>
