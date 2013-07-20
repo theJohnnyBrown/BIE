@@ -10,9 +10,6 @@ void pif_open_image(pi_name) {
     pi_img = loadImage(pi_name);
     pi_w = pi_img.width;pi_h = pi_img.width;
     size(pi_w, pi_h);
-    // println("w: " + pi_w + " h: " + pi_h);
-    // image(pi_img, 0, 0, pi_w, pi_h);
-
 }
 
 
