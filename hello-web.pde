@@ -3,11 +3,16 @@
 
 /* @pjs preload="picture.png"; */
 PImage pi_img;
+float a = 0.0;
+float s = 0.0;
 
 void pif_open_image(pi_name) {
     pi_img = loadImage(pi_name);
-    image(pi_img, 0, 0);
-    println("w: " + pi_img.width + " h: " + pi_img.height);
+    pi_w = pi_img.width;pi_h = pi_img.width;
+    size(2*pi_w, 2 * pi_h);
+    // println("w: " + pi_w + " h: " + pi_h);
+    image(pi_img, 0, 0, pi_w, pi_h);
+
 }
 
 
@@ -15,11 +20,22 @@ void setup() {
     pif_open_image("picture.png");
 }
 
-// Processing code
-void pif_draw_rectangle(pi_x, pi_y, pi_w, pi_h) {
-  size(pi_w, pi_h);
-  background(100);
-  stroke(255);
-  // ellipse(50, 50, 25, 25);
+void draw() {
+    background(150, 150, 150);
+    // pi_img = loadImage("picture.png");
+    a = a + 0.04;
+    s = cos(a);
+ 
+    translate(width/2, height/2);
+    scale(s); 
+    image(pi_img, 0,0);  
 }
+
+// Processing code
+// void pif_draw_rectangle(pi_x, pi_y, pi_w, pi_h) {
+//   size(pi_w, pi_h);
+//   background(100);
+//   stroke(255);
+//   // ellipse(50, 50, 25, 25);
+// }
 
